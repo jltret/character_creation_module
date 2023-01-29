@@ -8,6 +8,7 @@ from random import randint
 from graphic_arts.start_game_banner import run_screensaver
 
 
+# Считаем урон, нанесенный противнику
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, = '
@@ -20,6 +21,7 @@ def attack(char_name: str, char_class: str) -> str:
                 f'{5 + randint(-3, -1)}')
 
 
+# Считаем единицы урона
 def defence(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} ед. урона')
@@ -29,6 +31,7 @@ def defence(char_name: str, char_class: str) -> str:
         return (f'{char_name} блокировал {10 + randint(2, 5)} ед. урона')
 
 
+# Считаем специальные умения
 def special(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение '
@@ -39,6 +42,8 @@ def special(char_name: str, char_class: str) -> str:
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
 
 
+# Старт программы
+# Объявление и описание персонажей
 def start_training(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — великий мастер ближнего боя.')
@@ -63,6 +68,7 @@ def start_training(char_name: str, char_class: str) -> str:
     return 'Тренировка окончена.'
 
 
+# Выбор персонажа
 def choice_char_class() -> str:
     approve_choice: str = ''
     char_class: str = ''
